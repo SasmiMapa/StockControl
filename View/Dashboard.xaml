@@ -1,0 +1,78 @@
+﻿<Window x:Class="StockControl.View.Dashboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        mc:Ignorable="d"
+        Title="Dashboard" Height="500" Width="600"
+        Icon="C:\Users\VCT\RiderProjects\StockControl\StockControl\inventory.ico">
+    <Window.Background>
+        <ImageBrush ImageSource="C:\Users\VCT\RiderProjects\StockControl\StockControl\background2.jpg" />
+    </Window.Background>
+
+    <Window.Resources>
+        <Style x:Key="ButtonStyle1" TargetType="Button">
+            <Setter Property="Background" Value="#088F8F" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Height" Value="100" />
+            <Setter Property="Width" Value="150" />
+            <Setter Property="FontFamily" Value="Cascadia Code" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Margin" Value="0,50,25,0" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="20"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#00A9FA" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
+
+    <Grid Style="{DynamicResource GridStyle}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                    HorizontalAlignment="Center">
+            <Image Source="C:\Users\VCT\RiderProjects\StockControl\StockControl\inventory.ico" Width="70" Height="70"
+                   Margin="0,20,0,10" />
+            <TextBlock Text="Stock Control" Style="{StaticResource LogoStyle}" />
+        </StackPanel>
+
+        <Button Grid.Column="0" Grid.Row="1" Style="{DynamicResource ButtonStyle1}" Click="AddItemsClick">
+            <StackPanel Orientation="Vertical">
+                <Image Source="C:\Users\VCT\RiderProjects\StockControl\StockControl\addStock.png" Width="50"
+                       Height="50" Margin="0,0,5,0" />
+                <TextBlock Text="Add Stock" />
+            </StackPanel>
+        </Button>
+
+        <Button Grid.Column="1" Grid.Row="1" Style="{DynamicResource ButtonStyle1}" Click="ViewItemsClick">
+            <StackPanel Orientation="Vertical">
+                <Image Source="C:\Users\VCT\RiderProjects\StockControl\StockControl\table.png" Width="50" Height="50"
+                       Margin="0,0,5,0" />
+                <TextBlock Text="View Stocks" />
+            </StackPanel>
+        </Button>
+
+    </Grid>
+</Window>

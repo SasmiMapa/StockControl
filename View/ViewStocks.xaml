@@ -1,0 +1,53 @@
+﻿<Window x:Class="StockControl.View.ViewStocks"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:view="clr-namespace:StockControl.View"
+        mc:Ignorable="d"
+        Title="ViewStocks" Height="700" Width="800"
+        Icon="C:\Users\VCT\RiderProjects\StockControl\StockControl\inventory.ico">
+
+    <Window.Background>
+        <ImageBrush ImageSource="C:\Users\VCT\RiderProjects\StockControl\StockControl\background2.jpg" />
+    </Window.Background>
+
+    <Window.DataContext>
+        <view:YourDataModel />
+    </Window.DataContext>
+
+    <Window.Resources>
+
+        <Style x:Key="GridStyle1" TargetType="Grid">
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="Margin" Value="0,20,0,0" />
+        </Style>
+
+    </Window.Resources>
+
+    <Grid Style="{DynamicResource GridStyle1}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Vertical" HorizontalAlignment="Center">
+            <Image Source="C:\Users\VCT\RiderProjects\StockControl\StockControl\inventory.ico" Width="70" Height="70"
+                   Margin="0,20,0,10" />
+            <TextBlock Text="Stock Control" Style="{StaticResource LogoStyle}" />
+        </StackPanel>
+
+        <DataGrid Grid.Row="1" x:Name="dataGrid"
+                  Style="{StaticResource DataGridStyle1}"
+                  RowStyle="{DynamicResource DataGridRowStyle1}"
+                  CellStyle="{StaticResource DataGridCellStyle1}"
+                  ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle1}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="StockCode" Binding="{Binding StockCode}" />
+                <DataGridTextColumn Header="StockName" Binding="{Binding StockName}" />
+                <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

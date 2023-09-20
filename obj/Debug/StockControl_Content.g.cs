@@ -12,7 +12,6 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("background.jpg")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("background2.jpg")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("inventory.ico")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("product.ico")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("table.png")]
 
 

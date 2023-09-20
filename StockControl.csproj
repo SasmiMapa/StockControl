@@ -120,7 +120,6 @@
         <Content Include="D:\VCT\Downloads\inventory.ico">
             <Link>inventory.ico</Link>
         </Content>
-        <Content Include="product.ico"/>
         <Content Include="table.png"/>
     </ItemGroup>
     <ItemGroup>

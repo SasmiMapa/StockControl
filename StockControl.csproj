@@ -82,6 +82,9 @@
         <Compile Include="View\ViewStocks.xaml.cs">
             <DependentUpon>ViewStocks.xaml</DependentUpon>
         </Compile>
+        <Compile Include="View\ViewTransactions.xaml.cs">
+          <DependentUpon>ViewTransactions.xaml</DependentUpon>
+        </Compile>
         <Page Include="MainWindow.xaml">
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
@@ -94,6 +97,7 @@
         <Page Include="View\Dashboard.xaml"/>
         <Page Include="View\Login.xaml"/>
         <Page Include="View\ViewStocks.xaml"/>
+        <Page Include="View\ViewTransactions.xaml" />
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Properties\AssemblyInfo.cs">
@@ -121,6 +125,7 @@
             <Link>inventory.ico</Link>
         </Content>
         <Content Include="table.png"/>
+        <Content Include="transactions.png" />
     </ItemGroup>
     <ItemGroup>
         <ApplicationDefinition Include="View\App.xaml">

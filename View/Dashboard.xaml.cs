@@ -17,5 +17,11 @@ namespace StockControl.View {
             secondForm.Show();
             Close();
         }
+        
+        private void ViewLogClick(object sender, EventArgs e) {
+            var secondForm = new ViewTransactions();
+            secondForm.Show();
+            Close();
+        }
     }
 }

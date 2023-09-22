@@ -34,3 +34,5 @@ C:\Users\VCT\RiderProjects\StockControl\StockControl\obj\Debug\View\ViewStocks.g
 C:\Users\VCT\RiderProjects\StockControl\StockControl\obj\Debug\View\App.g.cs
 C:\Users\VCT\RiderProjects\StockControl\StockControl\obj\Debug\View\ViewStocks.baml
 C:\Users\VCT\RiderProjects\StockControl\StockControl\obj\Debug\View\App.baml
+C:\Users\VCT\RiderProjects\StockControl\StockControl\obj\Debug\View\ViewTransactions.g.cs
+C:\Users\VCT\RiderProjects\StockControl\StockControl\obj\Debug\View\ViewTransactions.baml

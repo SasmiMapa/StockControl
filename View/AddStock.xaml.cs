@@ -89,7 +89,7 @@ namespace StockControl.View {
                     var stockItem = new StockItems(codeText, nameText, quantity);
 
                     connection.InsertStockItem(stockItem.Code, stockItem.Name, stockItem.Quantity);
-                    connection.InsertTransactionLog(stockItem.Code, description);
+                    connection.InsertTransactionLog(stockItem.Code, stockItem.Name, stockItem.Quantity, description);
 
                     StatusMessage.Content = "Item successfully added";
                 }

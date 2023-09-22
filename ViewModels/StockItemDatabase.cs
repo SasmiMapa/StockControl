@@ -35,12 +35,14 @@ namespace StockControl.ViewModels {
             }
         }
 
-        public void InsertTransactionLog(string stockCode, string description) {
+        public void InsertTransactionLog(string stockCode, string stockName, int quantity, string description) {
             var insertQuery =
-                "INSERT INTO TransactionLog(StockID, [Date/Time], Description) VALUES (@codeText, DATETIME('now'), @description)";
+                "INSERT INTO TransactionLog(StockID, StockName, Quantity, [Date/Time], Description) VALUES (@codeText, @nameText, @quantity, DATETIME('now'), @description)";
 
             using (var insertCommand = new SQLiteCommand(insertQuery, Connection)) {
                 insertCommand.Parameters.AddWithValue("@codeText", stockCode);
+                insertCommand.Parameters.AddWithValue("@nameText", stockName);
+                insertCommand.Parameters.AddWithValue("@quantity", quantity);
                 insertCommand.Parameters.AddWithValue("@description", description);
                 insertCommand.ExecuteNonQuery();
             }

@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:view="clr-namespace:StockControl.View"
         mc:Ignorable="d"
-        Title="ViewTransactions" Height="700" Width="800"
+        Title="ViewTransactions" Height="700" Width="1100"
         Icon="C:\Users\VCT\RiderProjects\StockControl\StockControl\inventory.ico">
     
     <Window.Background>

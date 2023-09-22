@@ -97,11 +97,5 @@ namespace StockControl.View {
                 connection.Close();
             }
         }
-
-        private void ViewButton_Click(object sender, EventArgs e) {
-            var secondForm = new ViewStocks();
-            secondForm.Show();
-            Close();
-        }
     }
 }

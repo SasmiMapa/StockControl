@@ -37,7 +37,7 @@ namespace StockControl.ViewModels {
 
         public void InsertTransactionLog(string stockCode, string stockName, int quantity, string description) {
             var insertQuery =
-                "INSERT INTO TransactionLog(StockID, StockName, Quantity, [Date/Time], Description) VALUES (@codeText, @nameText, @quantity, DATETIME('now'), @description)";
+                "INSERT INTO TransactionLog(StockID, StockName, Quantity, DateTime, Description) VALUES (@codeText, @nameText, @quantity, DATETIME('now'), @description)";
 
             using (var insertCommand = new SQLiteCommand(insertQuery, Connection)) {
                 insertCommand.Parameters.AddWithValue("@codeText", stockCode);

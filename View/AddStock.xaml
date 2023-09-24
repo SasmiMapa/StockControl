@@ -4,14 +4,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         mc:Ignorable="d"
-        Title="AddStock" Height="700" Width="600"
+        Title="AddStock" Height="750" Width="650"
         Icon="C:\Users\VCT\RiderProjects\StockControl\StockControl\inventory.ico">
     <Window.Background>
         <ImageBrush ImageSource="C:\Users\VCT\RiderProjects\StockControl\StockControl\background2.jpg" />
     </Window.Background>
-
+    
     <Grid Style="{DynamicResource GridStyle}">
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
@@ -49,5 +50,10 @@
         <Button Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" x:Name="AddButton" Content="Add Item" Style="{StaticResource ButtonStyle}"
                 IsEnabled="True" Click="AddItem" />
         <Label Grid.Column="0" Grid.Row="5" x:Name="StatusMessage" Style="{StaticResource Message}" />
+        
+        <Button Grid.Column="2" Grid.Row="4" Style="{DynamicResource HomeButton}" Click="HomeClick">
+                <Image Source="C:\Users\VCT\RiderProjects\StockControl\StockControl\home1.png" Width="30" Height="30"
+                       Margin="0,0,0,0" />
+        </Button>
     </Grid>
 </Window>

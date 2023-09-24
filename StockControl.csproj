@@ -119,11 +119,11 @@
     </ItemGroup>
     <ItemGroup>
         <Content Include="addStock.png"/>
-        <Content Include="background.jpg"/>
         <Content Include="background2.jpg"/>
         <Content Include="D:\VCT\Downloads\inventory.ico">
             <Link>inventory.ico</Link>
         </Content>
+        <Content Include="home1.png" />
         <Content Include="table.png"/>
         <Content Include="transactions.png" />
     </ItemGroup>

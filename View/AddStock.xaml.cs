@@ -97,5 +97,11 @@ namespace StockControl.View {
                 connection.Close();
             }
         }
+        
+        private void HomeClick(object sender, EventArgs e) {
+            var secondForm = new Dashboard();
+            secondForm.Show();
+            Close();
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.SQLite;
 
 namespace StockControl.View {
@@ -39,6 +40,12 @@ namespace StockControl.View {
             }
 
             dataGrid.ItemsSource = myList;
+        }
+        
+        private void HomeClick(object sender, EventArgs e) {
+            var secondForm = new Dashboard();
+            secondForm.Show();
+            Close();
         }
     }
 }

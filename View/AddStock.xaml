@@ -25,7 +25,7 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
                     HorizontalAlignment="Center">
             <Image Source="C:\Users\VCT\RiderProjects\StockControl\StockControl\inventory.ico" Width="70" Height="70"
                    Margin="0,20,0,10" />
@@ -47,7 +47,7 @@
         <Label Grid.Column="0" Grid.Row="5" x:Name="QuantityError" Style="{DynamicResource Message}" />
 
 
-        <Button Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" x:Name="AddButton" Content="Add Item" Style="{StaticResource ButtonStyle}"
+        <Button Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" x:Name="AddButton" Content="Add Item" Style="{StaticResource ButtonStyle}"
                 IsEnabled="True" Click="AddItem" />
         <Label Grid.Column="0" Grid.Row="5" x:Name="StatusMessage" Style="{StaticResource Message}" />
         

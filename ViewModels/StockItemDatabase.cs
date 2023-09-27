@@ -87,14 +87,16 @@ namespace StockControl.ViewModels {
             }
         }
 
-        public void MakeStockItemNull(string stockCode) {
-            var updateQuery =
-                "UPDATE StockItem SET StockCode = NULL, SET StockName = NULL, Quantity = NULL WHERE StockCode = @codeText";
+        public void MakeStockItemNull(string stockCode) 
+        {
+            var updateQuery = "UPDATE StockItem SET StockCode = NULL, StockName = NULL, Quantity = NULL WHERE StockCode = @codeText";
 
-            using (var updateCommand = new SQLiteCommand(updateQuery, Connection)) {
+            using (var updateCommand = new SQLiteCommand(updateQuery, Connection)) 
+            {
                 updateCommand.Parameters.AddWithValue("@codeText", stockCode);
                 updateCommand.ExecuteNonQuery();
             }
         }
+
     }
 }

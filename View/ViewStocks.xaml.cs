@@ -26,10 +26,14 @@ namespace StockControl.View {
                 using (var selectCommand = new SQLiteCommand(selectQuery, connection)) {
                     using (var reader = selectCommand.ExecuteReader()) {
                         while (reader.Read()) {
-                            var stockCode = reader.IsDBNull(0) ? null : reader.GetString(0);
-                            var stockName = reader.IsDBNull(1) ? null : reader.GetString(1);
-                            var quantity = reader.IsDBNull(2) ? null : reader.GetInt32(2).ToString();
+                            if(reader.IsDBNull(0) || reader.IsDBNull(1) || reader.IsDBNull(2))
+                            {
+                                continue;
+                            }
 
+                            var stockCode = reader.GetString(0);
+                            var stockName = reader.GetString(1);
+                            var quantity = reader.GetInt32(2).ToString();
 
                             myList.Add(new YourDataModel
                                 { StockCode = stockCode, StockName = stockName, Quantity = quantity });

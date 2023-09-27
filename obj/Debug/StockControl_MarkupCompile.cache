@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\VCT\RiderProjects\StockControl\StockControl\View\App.xaml
-6-97773930
+61389547630
 6-87202016
-122096131128
+12-717921080
 15-82182450
-MainWindow.xaml;View\AddStock.xaml;View\Dashboard.xaml;View\Login.xaml;View\ViewStocks.xaml;View\ViewTransactions.xaml;
+MainWindow.xaml;View\UpdateStock.xaml;View\Dashboard.xaml;View\Login.xaml;View\ViewStocks.xaml;View\ViewTransactions.xaml;
 
-False
+True
 

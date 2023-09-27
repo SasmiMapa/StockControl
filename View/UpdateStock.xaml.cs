@@ -5,8 +5,8 @@ using StockControl.Models;
 using StockControl.ViewModels;
 
 namespace StockControl.View {
-    public partial class AddStock {
-        public AddStock() {
+    public partial class UpdateStock {
+        public UpdateStock() {
             InitializeComponent();
             CodeText.TextChanged += CodeText_TextChanged;
             QuantityText.TextChanged += QuantityText_TextChanged;
@@ -61,12 +61,36 @@ namespace StockControl.View {
             var isAnyTextInputBlank = string.IsNullOrWhiteSpace(codeText) || string.IsNullOrWhiteSpace(nameText) ||
                                       string.IsNullOrWhiteSpace(quantity);
 
+            var stockItemExists = false;
+
+            if (!isAnyTextInputBlank) {
+                var connectionString =
+                    "Data Source=C:\\Users\\VCT\\RiderProjects\\StockControl\\StockItem.sqlite;Version=3;";
+
+                using (var connection = new StockItemDatabase(connectionString)) {
+                    connection.Open();
+
+                    stockItemExists = connection.CheckStockExists(codeText);
+
+                    connection.Close();
+                }
+            }
+
             if ((string)CodeError.Content != string.Empty || (string)QuantityError.Content != string.Empty ||
-                (string)NameError.Content != string.Empty || isAnyTextInputBlank)
+                (string)NameError.Content != string.Empty || isAnyTextInputBlank) {
                 AddButton.IsEnabled = false;
-            else
+                RemoveButton.IsEnabled = false;
+            }
+            else if (stockItemExists) {
+                RemoveButton.IsEnabled = true;
+                AddButton.IsEnabled = false;
+            }
+            else {
+                RemoveButton.IsEnabled = false;
                 AddButton.IsEnabled = true;
+            }
         }
+
 
         private void AddItem(object sender, EventArgs e) {
             var codeText = CodeText.Text;
@@ -97,7 +121,42 @@ namespace StockControl.View {
                 connection.Close();
             }
         }
-        
+
+        private void RemoveItem(object sender, EventArgs e) {
+            var codeText = CodeText.Text;
+            var description = "Item removed";
+
+            var connectionString =
+                "Data Source=C:\\Users\\VCT\\RiderProjects\\StockControl\\StockItem.sqlite;Version=3;";
+
+            using (var connection = new StockItemDatabase(connectionString)) {
+                connection.Open();
+
+                if (connection.CheckStockExists(codeText)) {
+                    var stockName = string.Empty;
+                    var quantity = string.Empty;
+
+                    connection.GetStockDetails(codeText, out stockName, out quantity);
+
+                    NameText.Text = stockName;
+                    QuantityText.Text = quantity;
+
+                    if (int.TryParse(quantity, out var quantityValue) && quantityValue == 0) {
+                        connection.MakeStockItemNull(codeText);
+                        connection.InsertRemovalLog(codeText, stockName, quantityValue, description);
+
+                        StatusMessage.Content = "Item successfully removed";
+                    }
+                    else {
+                        StatusMessage.Content = "Item does not have 0 quantity";
+                    }
+                }
+
+                connection.Close();
+            }
+        }
+
+
         private void HomeClick(object sender, EventArgs e) {
             var secondForm = new Dashboard();
             secondForm.Show();

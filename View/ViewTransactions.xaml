@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="ViewTransactions" Height="700" Width="1100"
         Icon="C:\Users\VCT\RiderProjects\StockControl\StockControl\inventory.ico">
-    
+
     <Window.Background>
         <ImageBrush ImageSource="C:\Users\VCT\RiderProjects\StockControl\StockControl\background2.jpg" />
     </Window.Background>
@@ -15,7 +15,7 @@
     <Window.DataContext>
         <view:MyDataModel />
     </Window.DataContext>
-    
+
     <Window.Resources>
 
         <Style x:Key="GridStyle1" TargetType="Grid">
@@ -24,26 +24,27 @@
         </Style>
 
     </Window.Resources>
-    
+
     <Grid Style="{DynamicResource GridStyle1}">
-        
+
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        
-        <StackPanel Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Orientation="Vertical" HorizontalAlignment="Center">
+
+        <StackPanel Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Orientation="Vertical"
+                    HorizontalAlignment="Center">
             <Image Source="C:\Users\VCT\RiderProjects\StockControl\StockControl\inventory.ico" Width="70" Height="70"
                    Margin="0,20,0,10" />
             <TextBlock Text="Stock Control" Style="{StaticResource LogoStyle}" />
         </StackPanel>
-        
+
         <DataGrid Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" x:Name="dataGrid1"
                   Style="{StaticResource DataGridStyle1}"
                   RowStyle="{DynamicResource DataGridRowStyle1}"
@@ -53,15 +54,15 @@
                 <DataGridTextColumn Header="StockCode" Binding="{Binding StockCode}" />
                 <DataGridTextColumn Header="StockName" Binding="{Binding StockName}" />
                 <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" />
-                <DataGridTextColumn Header="Description" Binding="{Binding Description}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Date/Time" Binding="{Binding DateTime}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Description" Binding="{Binding Description}" />
+                <DataGridTextColumn Header="Date/Time" Binding="{Binding DateTime}" />
             </DataGrid.Columns>
         </DataGrid>
-        
+
         <Button Grid.Column="1" Grid.Row="0" Style="{DynamicResource HomeButton}" Click="HomeClick">
             <Image Source="C:\Users\VCT\RiderProjects\StockControl\StockControl\home1.png" Width="30" Height="30"
                    Margin="0,0,0,0" />
         </Button>
-        
+
     </Grid>
 </Window>

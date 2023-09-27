@@ -24,10 +24,8 @@ C:\Users\VCT\RiderProjects\StockControl\StockControl\obj\Debug\StockControl.pdb
 C:\Users\VCT\RiderProjects\StockControl\StockControl\obj\Debug\StockControl_Content.g.cs
 C:\Users\VCT\RiderProjects\StockControl\StockControl\obj\Debug\StockControl_MarkupCompile.lref
 C:\Users\VCT\RiderProjects\StockControl\StockControl\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\VCT\RiderProjects\StockControl\StockControl\obj\Debug\View\AddStock.baml
 C:\Users\VCT\RiderProjects\StockControl\StockControl\obj\Debug\View\Dashboard.baml
 C:\Users\VCT\RiderProjects\StockControl\StockControl\obj\Debug\View\Login.baml
-C:\Users\VCT\RiderProjects\StockControl\StockControl\obj\Debug\View\AddStock.g.cs
 C:\Users\VCT\RiderProjects\StockControl\StockControl\obj\Debug\View\Dashboard.g.cs
 C:\Users\VCT\RiderProjects\StockControl\StockControl\obj\Debug\View\Login.g.cs
 C:\Users\VCT\RiderProjects\StockControl\StockControl\obj\Debug\View\ViewStocks.g.cs
@@ -36,3 +34,5 @@ C:\Users\VCT\RiderProjects\StockControl\StockControl\obj\Debug\View\ViewStocks.b
 C:\Users\VCT\RiderProjects\StockControl\StockControl\obj\Debug\View\App.baml
 C:\Users\VCT\RiderProjects\StockControl\StockControl\obj\Debug\View\ViewTransactions.g.cs
 C:\Users\VCT\RiderProjects\StockControl\StockControl\obj\Debug\View\ViewTransactions.baml
+C:\Users\VCT\RiderProjects\StockControl\StockControl\obj\Debug\View\UpdateStock.baml
+C:\Users\VCT\RiderProjects\StockControl\StockControl\obj\Debug\View\UpdateStock.g.cs

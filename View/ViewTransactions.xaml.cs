@@ -10,7 +10,7 @@ namespace StockControl.View {
         public string Description { get; set; }
         public string DateTime { get; set; }
     }
-    
+
     public partial class ViewTransactions {
         public ViewTransactions() {
             InitializeComponent();
@@ -34,8 +34,10 @@ namespace StockControl.View {
                             var date = reader.GetString(3);
                             var desc = reader.GetString(4);
 
-                            myList1.Add(new MyDataModel
-                                { StockCode = stockCode, StockName = stockName, Quantity = quantity, Description = desc, DateTime = date });
+                            myList1.Add(new MyDataModel {
+                                StockCode = stockCode, StockName = stockName, Quantity = quantity, Description = desc,
+                                DateTime = date
+                            });
                         }
                     }
                 }
@@ -45,7 +47,7 @@ namespace StockControl.View {
 
             dataGrid1.ItemsSource = myList1;
         }
-        
+
         private void HomeClick(object sender, EventArgs e) {
             var secondForm = new Dashboard();
             secondForm.Show();

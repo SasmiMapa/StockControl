@@ -7,7 +7,7 @@ namespace StockControl.View {
         }
 
         private void AddItemsClick(object sender, EventArgs e) {
-            var secondForm = new AddStock();
+            var secondForm = new UpdateStock();
             secondForm.Show();
             Close();
         }
@@ -17,7 +17,7 @@ namespace StockControl.View {
             secondForm.Show();
             Close();
         }
-        
+
         private void ViewLogClick(object sender, EventArgs e) {
             var secondForm = new ViewTransactions();
             secondForm.Show();

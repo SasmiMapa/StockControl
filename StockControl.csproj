@@ -66,8 +66,8 @@
         <Compile Include="DatabaseConnection.cs"/>
         <Compile Include="Models\StockItems.cs"/>
         <Compile Include="ViewModels\StockItemDatabase.cs"/>
-        <Compile Include="View\AddStock.xaml.cs">
-            <DependentUpon>AddStock.xaml</DependentUpon>
+        <Compile Include="View\UpdateStock.xaml.cs">
+            <DependentUpon>UpdateStock.xaml</DependentUpon>
         </Compile>
         <Compile Include="View\App.xaml.cs">
             <DependentUpon>App.xaml</DependentUpon>
@@ -83,7 +83,7 @@
             <DependentUpon>ViewStocks.xaml</DependentUpon>
         </Compile>
         <Compile Include="View\ViewTransactions.xaml.cs">
-          <DependentUpon>ViewTransactions.xaml</DependentUpon>
+            <DependentUpon>ViewTransactions.xaml</DependentUpon>
         </Compile>
         <Page Include="MainWindow.xaml">
             <Generator>MSBuild:Compile</Generator>
@@ -93,11 +93,11 @@
             <DependentUpon>MainWindow.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
-        <Page Include="View\AddStock.xaml"/>
+        <Page Include="View\UpdateStock.xaml"/>
         <Page Include="View\Dashboard.xaml"/>
         <Page Include="View\Login.xaml"/>
         <Page Include="View\ViewStocks.xaml"/>
-        <Page Include="View\ViewTransactions.xaml" />
+        <Page Include="View\ViewTransactions.xaml"/>
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Properties\AssemblyInfo.cs">
@@ -123,9 +123,9 @@
         <Content Include="D:\VCT\Downloads\inventory.ico">
             <Link>inventory.ico</Link>
         </Content>
-        <Content Include="home1.png" />
+        <Content Include="home1.png"/>
         <Content Include="table.png"/>
-        <Content Include="transactions.png" />
+        <Content Include="transactions.png"/>
     </ItemGroup>
     <ItemGroup>
         <ApplicationDefinition Include="View\App.xaml">

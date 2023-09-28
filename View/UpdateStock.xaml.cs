@@ -6,6 +6,9 @@ using StockControl.ViewModels;
 
 namespace StockControl.View {
     public partial class UpdateStock {
+        private string oldCodeText;
+        private string oldNameText;
+
         public UpdateStock() {
             InitializeComponent();
             CodeText.TextChanged += CodeText_TextChanged;
@@ -15,6 +18,29 @@ namespace StockControl.View {
         }
 
         private void CodeText_TextChanged(object sender, TextChangedEventArgs e) {
+            var newCodeText = CodeText.Text;
+
+            if (newCodeText != oldCodeText) {
+                string stockName;
+                string quantity;
+
+                var connectionString =
+                    "Data Source=C:\\Users\\VCT\\RiderProjects\\StockControl\\StockItem.sqlite;Version=3;";
+
+                using (var connection = new StockItemDatabase(connectionString)) {
+                    connection.Open();
+
+                    connection.GetStockDetails(newCodeText, out stockName, out quantity);
+
+                    NameText.Text = stockName;
+                    QuantityText.Text = quantity;
+
+                    oldCodeText = newCodeText;
+
+                    connection.Close();
+                }
+            }
+
             var regex = new Regex("^[a-zA-Z0-9]*$");
             if (!regex.IsMatch(CodeText.Text)) {
                 CodeText.Text = Regex.Replace(CodeText.Text, "[^a-zA-Z0-9]", "");
@@ -82,8 +108,11 @@ namespace StockControl.View {
                 RemoveButton.IsEnabled = false;
             }
             else if (stockItemExists) {
-                RemoveButton.IsEnabled = true;
                 AddButton.IsEnabled = false;
+                if (quantity == "0")
+                    RemoveButton.IsEnabled = true;
+                else
+                    RemoveButton.IsEnabled = false;
             }
             else {
                 RemoveButton.IsEnabled = false;
@@ -108,6 +137,7 @@ namespace StockControl.View {
 
                 if (connection.CheckStockExists(codeText)) {
                     CodeError.Content = "Stock already exists";
+                    AddButton.IsEnabled = false;
                 }
                 else {
                     var stockItem = new StockItems(codeText, nameText, quantity);
@@ -142,7 +172,7 @@ namespace StockControl.View {
                     QuantityText.Text = quantity;
 
                     if (int.TryParse(quantity, out var quantityValue) && quantityValue == 0) {
-                        connection.MakeStockItemNull(codeText);
+                        connection.RemoveStockItem(codeText);
                         connection.InsertRemovalLog(codeText, stockName, quantityValue, description);
 
                         StatusMessage.Content = "Item successfully removed";

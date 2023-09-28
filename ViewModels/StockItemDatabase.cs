@@ -36,6 +36,16 @@ namespace StockControl.ViewModels {
             }
         }
 
+        public void RemoveStockItem(string stockCode) {
+            var updateQuery =
+                "UPDATE StockItem SET StockCode = NULL, StockName = NULL, Quantity = NULL WHERE StockCode = @codeText";
+
+            using (var updateCommand = new SQLiteCommand(updateQuery, Connection)) {
+                updateCommand.Parameters.AddWithValue("@codeText", stockCode);
+                updateCommand.ExecuteNonQuery();
+            }
+        }
+
         public void InsertRemovalLog(string stockCode, string stockName, int quantity, string description) {
             var insertQuery =
                 "INSERT INTO TransactionLog(StockID, StockName, Quantity, DateTime, Description) VALUES (@codeText, @nameText, @quantity, DATETIME('now'), @description)";
@@ -86,17 +96,5 @@ namespace StockControl.ViewModels {
                 }
             }
         }
-
-        public void MakeStockItemNull(string stockCode) 
-        {
-            var updateQuery = "UPDATE StockItem SET StockCode = NULL, StockName = NULL, Quantity = NULL WHERE StockCode = @codeText";
-
-            using (var updateCommand = new SQLiteCommand(updateQuery, Connection)) 
-            {
-                updateCommand.Parameters.AddWithValue("@codeText", stockCode);
-                updateCommand.ExecuteNonQuery();
-            }
-        }
-
     }
 }

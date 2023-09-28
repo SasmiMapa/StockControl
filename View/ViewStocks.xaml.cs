@@ -26,10 +26,7 @@ namespace StockControl.View {
                 using (var selectCommand = new SQLiteCommand(selectQuery, connection)) {
                     using (var reader = selectCommand.ExecuteReader()) {
                         while (reader.Read()) {
-                            if(reader.IsDBNull(0) || reader.IsDBNull(1) || reader.IsDBNull(2))
-                            {
-                                continue;
-                            }
+                            if (reader.IsDBNull(0) || reader.IsDBNull(1) || reader.IsDBNull(2)) continue;
 
                             var stockCode = reader.GetString(0);
                             var stockName = reader.GetString(1);

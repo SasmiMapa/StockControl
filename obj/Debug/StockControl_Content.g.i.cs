@@ -10,8 +10,8 @@
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("addstock.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("background2.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("inventory.ico")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("home1.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("inventory.ico")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("table.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("transactions.png")]
 

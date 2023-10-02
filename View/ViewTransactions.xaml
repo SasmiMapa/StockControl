@@ -13,7 +13,7 @@
     </Window.Background>
 
     <Window.DataContext>
-        <view:MyDataModel />
+        <view:TransactionModel />
     </Window.DataContext>
 
     <Window.Resources>

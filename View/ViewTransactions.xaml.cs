@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data.SQLite;
 
 namespace StockControl.View {
-    public class MyDataModel {
+    public class TransactionModel {
         public string StockCode { get; set; }
         public string StockName { get; set; }
         public string Quantity { get; set; }
@@ -15,7 +15,7 @@ namespace StockControl.View {
         public ViewTransactions() {
             InitializeComponent();
             DataContext = this;
-            var myList1 = new List<MyDataModel>();
+            var myList1 = new List<TransactionModel>();
 
             var connectionString =
                 "Data Source=C:\\Users\\VCT\\RiderProjects\\StockControl\\StockItem.sqlite;Version=3;";
@@ -34,7 +34,7 @@ namespace StockControl.View {
                             var date = reader.GetString(3);
                             var desc = reader.GetString(4);
 
-                            myList1.Add(new MyDataModel {
+                            myList1.Add(new TransactionModel {
                                 StockCode = stockCode, StockName = stockName, Quantity = quantity, Description = desc,
                                 DateTime = date
                             });
